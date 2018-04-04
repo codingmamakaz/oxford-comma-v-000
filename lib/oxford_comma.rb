@@ -1,13 +1,9 @@
-def line(katz_deli)
-  if katz_deli.size == 0
-    puts "The line is currently empty."
+def oxford_comma(array)
+  if array.size == 1
+    array.join
+  elsif array.size == 2
+    array.join(" and ")
   else
-    cheque = []
-    counter = 0
-    katz_deli.each do |in_line|
-      counter += 1
-      cheque.push(counter,".", in_line, " ")
-    end
-    puts "The line is currently: #{cheque.join}"
+    array[0..-2].join(", ") + " and " + array[-1]
   end
 end
